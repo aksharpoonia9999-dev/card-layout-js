@@ -91,8 +91,6 @@
 
       buttonWrapper.appendChild(button);
 
-      // MAIN BUTTON CLICK ANIMATION
-
       button.addEventListener("click", () => {
         button.classList.remove("bg-black", "text-white", "border-transparent");
 
@@ -183,6 +181,7 @@
       document.body.appendChild(imageInput);
 
       // SECRET BUTTON CLICK
+
       // OPEN IMAGE PICKER
 
       secretButton.addEventListener("click", () => {
@@ -231,50 +230,6 @@
         // Allows selecting the same image again
 
         imageInput.value = "";
-      });
-
-      // ADD RANDOM IMAGE FROM 16 IMG
-
-      button.addEventListener("click", () => {
-        // Pick a random image from imgData
-
-        const randomIndex = Math.floor(Math.random() * imgData.length);
-
-        const randomImage = imgData[randomIndex];
-
-        // Create new card
-
-        const newCard = document.createElement("div");
-
-        newCard.classList.add(
-          "card",
-          "max-w-[312px]",
-          "w-full",
-          "rounded-[30px]",
-          "h-[348px]",
-        );
-
-        // Add image
-
-        newCard.innerHTML = `
-    <img
-      class="
-        w-full
-        object-cover
-        h-[348px]
-        rounded-[30px]
-        cursor-pointer
-      "
-      width="312"
-      height="348"
-      src="${randomImage.img}"
-      alt="post-img"
-    >
-  `;
-
-        // Add card to grid
-
-        gridContainer.appendChild(newCard);
       });
 
       // grid-container
